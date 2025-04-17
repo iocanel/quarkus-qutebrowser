@@ -22,19 +22,19 @@ This is exactly the kind of integration this project enables.
 
 # Building
 
-The project can be build with: 
+Build the project in native mode:
 
 ```bash
-./mvnw clean install
+./mvnw clean install -Pnative
 ```
 
-To run the generated jar, you can use:
+Copy the generated binary to your PATH as `quteb`:
 
 ```bash
-java -jar target/quarkus-app/quarkus-run.jar
+cp target/quarkus-qutebrowser-${your version here}-runner $HOME/bin/quteb
 ```
 
-To simplify things you can create an alias in your shell:
+Alternatively you can build in JVM mode and create an alias:
 
 ```bash
 alias quteb='java -jar /path/to/quarkus-qutebrowser/target/quarkus-app/quarkus-run.jar'
@@ -68,5 +68,5 @@ quteb tabs read <text to fuzilly match url or title>
 To start an MCP server, providing all the above functionality, you can use:
 
 ```bash
-quteb mcp
+quteb --mcp
 ```
